@@ -1,0 +1,22 @@
+import random
+
+def roll(sides):
+    output = random.randint(1, sides)
+    return output
+
+
+def main():
+    sides = 6
+    rolling = True
+
+    while rolling:
+        roll_again = input(" Do you want to roll? ENTER=Roll. Q=Quit.")
+        if roll_again.lower() != "q":
+            num_rolled = roll(sides)
+            print("you rolled ",  num_rolled)
+        else:
+            rolling = False
+
+    print("Thanks for playing")
+
+main()
