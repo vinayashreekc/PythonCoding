@@ -1,0 +1,34 @@
+import random
+
+def num_valid(s):
+    if s.isdigit() and 1 <= int(s) <= 1000:
+        return True
+    else:
+        return False
+
+def main():
+    num = input("Guess a number between 1 and 1000:")
+    random_num = random.randint(1, 1000)
+    #print("Random generated number is ", random_num)
+    flag = False
+    num_guess = 0
+    while not flag:
+        if not num_valid(num):
+            num = input("I wont count that one, enter a number between 1 and 1000")
+            continue
+        else:
+            num_guess += 1
+            num = int(num)
+
+            if num < random_num:
+                num = input("entered number is smaller, guess again:")
+
+            elif num > random_num:
+                num = input("entered number is bigger, guess again:")
+            else:
+                print("Guessed it right in", num_guess, "guesses....yay!")
+                flag = True
+    print("Thanks for playing")
+
+
+main()
