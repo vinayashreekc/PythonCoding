@@ -1,0 +1,15 @@
+story = '''I was in a {} sleep when awakened by a barking {}, as I woke up I {} men in {}, now am I being {}'''
+
+def main():
+    adjective = []
+    adjective.append(input("enter an adjective:"))
+    animal = input("enter an animal")
+    verb = input("enter a verb")
+    color = input("enter a color")
+    adjective.append(input("enter another adjective:"))
+
+    mad_lib = story.format(adjective[0], animal, verb, color, adjective[1])
+
+    print(mad_lib)
+
+main()
